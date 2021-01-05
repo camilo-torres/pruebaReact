@@ -1,58 +1,17 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
-
-import React from 'react';
-import {
-  SafeAreaView,
-  StyleSheet,
-  ScrollView,
-  View,
-  Text,
-  StatusBar,
-  ImageBackground,
-} from 'react-native';
-
-import {
-  Header,
-  LearnMoreLinks,
-  Colors,
-  DebugInstructions,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-
-function Yupi (){
-  return <Text style= {{textAlign: 'center'}}> 
-      yupiiiiiiiiii
-    </Text>;
-}
-
-const image = require('./assets/images/fondo.png');
-
-const App: () => React$Node = () => {
-  return (
-    <>
-    <View style={styles.container}>
-    <ImageBackground source={image} style={styles.image}>
-    <Yupi/>
-    </ImageBackground>
-  </View>
-    </>
-  );
-};
+import React, { Component } from 'react';
+import 'react-native-gesture-handler';
+import { NavigationContainer } from '@react-navigation/native';
+import 'react-native-gesture-handler';
+import { StyleSheet, } from "react-native";
+import Navig from './components/mainTab'
+import TopBar from './components/mainTab'
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    flexDirection: "column"
+    flexDirection: "column",
   },
-  body: {
-    backgroundColor: Colors.white,
-  },
+
   image: {
     flex: 1,
     resizeMode: "cover",
@@ -60,5 +19,16 @@ const styles = StyleSheet.create({
   },
   
 });
+
+class App extends Component{
+  render(){
+    return(
+        <NavigationContainer style={{backgroundColor:'white'}}>
+        <TopBar/>
+        </NavigationContainer>
+    );
+  }
+}
+
 
 export default App;
